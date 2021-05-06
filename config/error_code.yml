@@ -1,0 +1,9 @@
+action_not_allow:
+  error_code: 401_001
+  error_message: invalid action
+type_not_allow:
+  error_code: 401_002
+  error_message: invalid type
+message_not_found:
+  error_code: 404_001
+  error_message: message not found
