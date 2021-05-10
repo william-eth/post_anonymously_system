@@ -21,6 +21,11 @@ class Api::V1::MessagesController < ApplicationController
     success_response(MessageBoard.display_info(:date))
   end
 
+  def top_ten
+    result = MessageBoard.order_by_top_ten.map(&:display)
+    success_response(result)
+  end
+
   private
 
   def message_params

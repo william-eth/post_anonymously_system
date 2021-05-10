@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :messages, only: [:index, :create] do
         collection do
           put 'approve'
+          get 'top_ten'
         end
       end
     end

@@ -5,6 +5,7 @@ class MessageBoard < ApplicationRecord
 
   scope :order_by_date, -> { order(created_at: :desc) }
   scope :order_by_top, -> { order(total_approved: :desc, created_at: :desc) }
+  scope :order_by_top_ten, -> { where("total_approved > ?", 0).order(total_approved: :desc).limit(10) }
 
   def self.display_info(order_by = 'date', page = 1, per_page = 10)
     case order_by
